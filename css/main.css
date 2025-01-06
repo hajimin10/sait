@@ -17,13 +17,52 @@
 
 .gnb li a {
     display: block;
-    padding: 12px 20px; /* 글자 간격 패딩으로 주기  */
+    padding: 0px 20px; /* 글자 간격 패딩으로 주기  */
     /* border: 1px solid #000; */
     font-weight: 700;
     font-size: 18px;
     color: var(--title-color);
 }
 
+.gnb li a i {
+    /* border: 1px solid red; */
+    display: block;
+    padding: 12px 0;
+
+    position: relative;
+}
+
+.gnb li a i::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+
+    /* 가로 기준 중앙 정렬 */ /* 선 중앙에서 나타나게 할 때 */
+    /* left: 50%; */
+    /* transform: translateX(-50%); trftx */
+
+    /* 왼쪽으로 나타났다가 */
+    left: auto;
+    right: 0;
+
+    width: 0%;
+    height: 3px;
+    background: var(--main-color);
+    transition: 0.4s;
+}
+
+.gnb li a:hover {
+    color: var(--main-color); /* 글씨 색 바꾸기 */
+}
+
+.gnb li a:hover i::after {
+    width: 100%;
+
+    /* 오른쪽으로  사라지기*/
+    left: 0;
+    right: auto;
+}
 .btn-search {
     width: 54px;
     height: 54px;
